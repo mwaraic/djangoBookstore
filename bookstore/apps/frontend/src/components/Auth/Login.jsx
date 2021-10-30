@@ -44,7 +44,7 @@ const Login = ({props}) => {
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
-          window.location.href="http://localhost:8000/"
+          window.location.href="https://yorkriverbookstore.herokuapp.com/"
         },
         (error) => {
           console.log(error)

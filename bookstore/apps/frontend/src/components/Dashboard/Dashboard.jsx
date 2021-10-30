@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     AuthService.logout().then(
         () => {
-        window.location.href="http://localhost:8000/login/"
+        window.location.href="https://yorkriverbookstore.herokuapp.com/login/"
         }
     )}
 
