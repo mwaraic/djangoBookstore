@@ -199,7 +199,9 @@ COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 django_heroku.settings(locals())
 
+"""
 try:
-    from .__local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
+"""

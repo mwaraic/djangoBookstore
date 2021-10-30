@@ -2,6 +2,6 @@
 *.pot
 *.pyc
 __pycache__/
-__local_settings.py
+local_settings.py
 db.sqlite3
 venv/
