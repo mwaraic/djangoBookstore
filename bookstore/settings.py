@@ -85,6 +85,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'bookstore.apps.books',
     'bookstore.apps.api',
+    'bookstore.apps.frontend.apps.FrontendConfig',
     'bookstore.apps.books.templatetags.my_tags',
     'bookstore.apps.shoppingcart.templatetags.cart_tag',
     'bookstore.apps.shoppingcart',
