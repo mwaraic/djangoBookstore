@@ -81,7 +81,10 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_filters',
     'tempus_dominus',
+    'rest_framework',
+    'corsheaders',
     'bookstore.apps.books',
+    'bookstore.apps.api',
     'bookstore.apps.books.templatetags.my_tags',
     'bookstore.apps.shoppingcart.templatetags.cart_tag',
     'bookstore.apps.shoppingcart',
@@ -89,6 +92,7 @@ INSTALLED_APPS = [
 ]
 CART_SESSION_ID = 'cart'
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

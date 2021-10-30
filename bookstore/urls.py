@@ -35,6 +35,7 @@ urlpatterns = [
     path('books/',include('bookstore.apps.books.urls',namespace="books")),
     path('cart/',include('bookstore.apps.shoppingcart.urls',namespace="cart")),
     path('', index_view, name="shop"),
+    path('',include('bookstore.apps.api.urls'))
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
