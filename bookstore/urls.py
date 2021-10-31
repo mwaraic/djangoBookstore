@@ -18,10 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from bookstore.apps.dashboard.views import club_view, index_view, home_view, profile_edit_view, clubs_view, profile_view
-from bookstore.apps.account.views import account_create_view, account_login_view, logoutUser
 
-admin.autodiscover()
 urlpatterns = [
     path('',include('bookstore.apps.frontend.urls')),
     path('',include('bookstore.apps.api.urls'))
