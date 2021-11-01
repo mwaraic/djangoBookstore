@@ -3,7 +3,10 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const wwwPath = path.join(__dirname, 'www');
 
-module.exports = {
+module.exports = (env, argv) => {
+  const mode = argv.mode || 'development';
+  return{
+  mode,
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./static/frontend"),
@@ -54,7 +57,8 @@ module.exports = {
 
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: JSON.stringify("development"),
+        NODE_ENV: JSON.stringify(mode),
       },
     }),]
+  }
 };

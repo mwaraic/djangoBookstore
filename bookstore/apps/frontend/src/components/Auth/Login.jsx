@@ -5,6 +5,7 @@ import CheckButton from "react-validation/build/button";
 import AuthService from "../../services/auth.service";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
+const apiUrl = process.env.NODE_ENV === 'production' ? 'https://yorkriverbookstore.herokuapp.com' : 'http://localhost:8000';
 
 const required = (value) => {
   if (!value) {
@@ -44,7 +45,7 @@ const Login = ({props}) => {
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
-          window.location.href="https://yorkriverbookstore.herokuapp.com/"
+          window.location.href=apiUrl
         },
         (error) => {
           console.log(error)
