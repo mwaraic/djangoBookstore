@@ -6,4 +6,5 @@ from .views import AllowAnyView, PrivateView # the view responsible for the fron
 urlpatterns = [
     path('', PrivateView, name='dashboard'),
     path('login/', AllowAnyView, name='login'), 
+    path('<str:name>/', AllowAnyView, name='open'), 
 ]

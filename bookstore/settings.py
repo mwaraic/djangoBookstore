@@ -83,6 +83,8 @@ INSTALLED_APPS = [
     'tempus_dominus',
     'rest_framework',
     'corsheaders',
+    'ckeditor',
+    'ckeditor_uploader',
     'bookstore.apps.books',
     'bookstore.apps.api',
     'bookstore.apps.frontend.apps.FrontendConfig',
@@ -91,6 +93,7 @@ INSTALLED_APPS = [
     'bookstore.apps.shoppingcart',
     'whitenoise.runserver_nostatic'   
 ]
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 CART_SESSION_ID = 'cart'
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -204,6 +207,7 @@ COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 django_heroku.settings(locals())
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 try:
     from .local_settings import *
