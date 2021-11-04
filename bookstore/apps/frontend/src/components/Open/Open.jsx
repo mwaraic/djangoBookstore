@@ -2,6 +2,7 @@ import React from "react";
 import UserService from "../../services/user.service";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 function urlify(text) {
   var urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -27,10 +28,8 @@ const Open = () => {
 
   return (
     <div className="container"> 
-      {loadingResume ? (  
-        <>
-       <div dangerouslySetInnerHTML={{ __html: urlify(resume[0].resume)}} />
-      </>):(<p>loadingUser</p>)}
+      {loadingResume ? (  <div>{ ReactHtmlParser(resume[0].resume) }</div>
+        ):(<p>loadingUser</p>)}
     </div>
   );
 };
