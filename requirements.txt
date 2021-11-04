@@ -135,3 +135,4 @@ django-cors-headers==3.10.0
 djangorestframework==3.12.4
 zope.event==4.5.0
 django-heroku
+django-ckeditor
